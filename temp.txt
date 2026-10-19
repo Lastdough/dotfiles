@@ -1,0 +1,4 @@
+cd C:\Users\abdur\dotfiles
+git add .
+git commit -m "Initial dotfiles: Windows PowerShell rice + shared Starship config"
+gh repo create dotfiles --public --source . --push   # or create it on github.com and `git remote add origin ...`

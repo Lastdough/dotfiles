@@ -1,0 +1,358 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "keybindings": 
+    [
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        }
+    ],
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "colorScheme": "One Half Dark (modified)"
+        },
+        "list": 
+        [
+            {
+                "colorScheme": "Catppuccin Mocha",
+                "cursorShape": "bar",
+                "font":
+                {
+                    "face": "DepartureMono Nerd Font Mono",
+                    "size": 12.375
+                },
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "opacity": 92,
+                "padding": "12",
+                "source": "Windows.Terminal.PowershellCore",
+                "useAcrylic": true
+            },
+            {
+                "bellStyle": "window",
+                "colorScheme": "Catppuccin Mocha",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "cursorShape": "bar",
+                "experimental.retroTerminalEffect": false,
+                "font":
+                {
+                    "face": "DepartureMono Nerd Font Mono",
+                    "size": 12.375
+                },
+                "opacity": 92,
+                "padding": "12",
+                "useAcrylic": true,
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{83892311-4b49-512e-9c4f-ae649c6702c2}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "colorScheme": "Campbell Powershell",
+                "guid": "{9ea19846-ca3a-5e7e-b146-ec32149d581b}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                "hidden": false,
+                "name": "Git Bash",
+                "source": "Git"
+            },
+            {
+                "colorScheme": "Solarized Dark",
+                "font": 
+                {
+                    "face": "SpaceMono Nerd Font",
+                    "weight": "normal"
+                },
+                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
+                "hidden": false,
+                "name": "Arch",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "colorScheme": "Ubuntu-22.04-ColorScheme",
+                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
+                "hidden": true,
+                "name": "Ubuntu-22.04",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{4ff56d04-d9cf-57ea-bae2-ad396374e7e3}",
+                "hidden": false,
+                "name": "Ubuntu 22.04.5 LTS",
+                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
+            },
+            {
+                "guid": "{06738a0d-f4f9-5801-a754-5825198d3924}",
+                "hidden": false,
+                "name": "docker-desktop",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{939dd279-f967-5600-96f9-057002542055}",
+                "hidden": false,
+                "name": "docker-desktop",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{65a180f9-3211-532f-9001-a3a568b5f7ec}",
+                "hidden": false,
+                "name": "docker-desktop",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{d98f2076-3de7-5a1a-bfc6-8a37a585aae2}",
+                "hidden": false,
+                "name": "docker-desktop",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{90e80170-dea3-5256-b946-b906d4415815}",
+                "hidden": false,
+                "name": "docker-desktop",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{f31ce4cf-9e0c-511e-909f-e8aa90d89211}",
+                "hidden": false,
+                "name": "docker-desktop",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{e4a12686-4614-5d98-83af-53a2c66f729c}",
+                "hidden": false,
+                "name": "Julia",
+                "source": "JuliaComputingInc.Julia_b0ra4bp6jsp6c"
+            },
+            {
+                "guid": "{888a67a0-7f6e-53ad-bcd1-c9ee3b9b33f8}",
+                "hidden": false,
+                "name": "docker-desktop",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{596761f7-0a1c-5cfd-9b39-fe50606ea1a6}",
+                "hidden": false,
+                "name": "docker-desktop",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{a03f54d8-81fc-5a10-90bd-18baf770c4b3}",
+                "hidden": false,
+                "name": "docker-desktop",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{a9970dab-e249-52fb-967c-543df613c4f3}",
+                "hidden": false,
+                "name": "docker-desktop",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{1777cdf0-b2c4-5a63-a204-eb60f349ea7c}",
+                "hidden": false,
+                "name": "Alpine",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{88324249-647d-5a82-a865-8f52e90b675a}",
+                "hidden": false,
+                "name": "docker-desktop",
+                "source": "Microsoft.WSL"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#282C34",
+            "black": "#282C34",
+            "blue": "#61AFEF",
+            "brightBlack": "#5A6374",
+            "brightBlue": "#61AFEF",
+            "brightCyan": "#56B6C2",
+            "brightGreen": "#95BF77",
+            "brightPurple": "#C678DD",
+            "brightRed": "#E06C75",
+            "brightWhite": "#DCDFE4",
+            "brightYellow": "#E5C07B",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#56B6C2",
+            "foreground": "#DCDFE4",
+            "green": "#0B3D2C",
+            "name": "One Half Dark (modified)",
+            "purple": "#C678DD",
+            "red": "#E06C75",
+            "selectionBackground": "#FFFFFF",
+            "white": "#DCDFE4",
+            "yellow": "#E5C07B"
+        },
+        {
+            "name": "Catppuccin Mocha",
+            "background": "#1E1E2E",
+            "foreground": "#CDD6F4",
+            "cursorColor": "#F5E0DC",
+            "selectionBackground": "#585B70",
+            "black": "#45475A",
+            "red": "#F38BA8",
+            "green": "#A6E3A1",
+            "yellow": "#F9E2AF",
+            "blue": "#89B4FA",
+            "purple": "#F5C2E7",
+            "cyan": "#94E2D5",
+            "white": "#BAC2DE",
+            "brightBlack": "#585B70",
+            "brightRed": "#F38BA8",
+            "brightGreen": "#A6E3A1",
+            "brightYellow": "#F9E2AF",
+            "brightBlue": "#89B4FA",
+            "brightPurple": "#F5C2E7",
+            "brightCyan": "#94E2D5",
+            "brightWhite": "#A6ADC8"
+        },
+        {
+            "name": "Tokyo Night",
+            "background": "#1A1B26",
+            "foreground": "#C0CAF5",
+            "cursorColor": "#C0CAF5",
+            "selectionBackground": "#283457",
+            "black": "#15161E",
+            "red": "#F7768E",
+            "green": "#9ECE6A",
+            "yellow": "#E0AF68",
+            "blue": "#7AA2F7",
+            "purple": "#BB9AF7",
+            "cyan": "#7DCFFF",
+            "white": "#A9B1D6",
+            "brightBlack": "#414868",
+            "brightRed": "#F7768E",
+            "brightGreen": "#9ECE6A",
+            "brightYellow": "#E0AF68",
+            "brightBlue": "#7AA2F7",
+            "brightPurple": "#BB9AF7",
+            "brightCyan": "#7DCFFF",
+            "brightWhite": "#C0CAF5"
+        },
+        {
+            "name": "Gruvbox Dark",
+            "background": "#282828",
+            "foreground": "#EBDBB2",
+            "cursorColor": "#EBDBB2",
+            "selectionBackground": "#665C54",
+            "black": "#282828",
+            "red": "#CC241D",
+            "green": "#98971A",
+            "yellow": "#D79921",
+            "blue": "#458588",
+            "purple": "#B16286",
+            "cyan": "#689D6A",
+            "white": "#A89984",
+            "brightBlack": "#928374",
+            "brightRed": "#FB4934",
+            "brightGreen": "#B8BB26",
+            "brightYellow": "#FABD2F",
+            "brightBlue": "#83A598",
+            "brightPurple": "#D3869B",
+            "brightCyan": "#8EC07C",
+            "brightWhite": "#EBDBB2"
+        },
+        {
+            "name": "Rose Pine",
+            "background": "#191724",
+            "foreground": "#E0DEF4",
+            "cursorColor": "#E0DEF4",
+            "selectionBackground": "#403D52",
+            "black": "#26233A",
+            "red": "#EB6F92",
+            "green": "#31748F",
+            "yellow": "#F6C177",
+            "blue": "#9CCFD8",
+            "purple": "#C4A7E7",
+            "cyan": "#EBBCBA",
+            "white": "#E0DEF4",
+            "brightBlack": "#6E6A86",
+            "brightRed": "#EB6F92",
+            "brightGreen": "#31748F",
+            "brightYellow": "#F6C177",
+            "brightBlue": "#9CCFD8",
+            "brightPurple": "#C4A7E7",
+            "brightCyan": "#EBBCBA",
+            "brightWhite": "#E0DEF4"
+        }
+    ],
+    "theme": "dark",
+    "themes": []
+}

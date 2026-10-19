@@ -1,0 +1,27 @@
+# Normalize line endings in the repo; pin the ones that break if converted
+* text=auto
+
+# Linux / cross-platform: must stay LF (CRLF breaks shebangs and bash: $'\r': command not found)
+*.sh    text eol=lf
+*.bash  text eol=lf
+*.zsh   text eol=lf
+*.toml  text eol=lf
+*.conf  text eol=lf
+.bashrc       text eol=lf
+.bash_profile text eol=lf
+.profile      text eol=lf
+.zshrc        text eol=lf
+linux/**      text eol=lf
+
+# Windows
+*.ps1   text eol=crlf
+*.psm1  text eol=crlf
+*.psd1  text eol=crlf
+*.cmd   text eol=crlf
+*.bat   text eol=crlf
+
+# Binary
+*.ttf   binary
+*.otf   binary
+*.png   binary
+*.jpg   binary
