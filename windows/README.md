@@ -29,6 +29,15 @@ Set up on 2026-10-19 · Windows 11 · display at 200% scaling (192 DPI)
 | `Tab` | Completion menu |
 | `→` / `F2` | Accept a suggestion / toggle the suggestion list and inline views |
 | `Ctrl+D` | Delete a character, or exit on an empty line |
+| `Enter` | Runs the line as usual, and also sets the tab title to the command (see [Tab titles](#tab-titles)) |
+
+### Tab titles
+
+Each Windows Terminal tab shows the **current folder** (`~` for home, `C:\` at a drive root). While a command is running it shows the **command** instead (trimmed to 30 characters), e.g. `git push`, then switches back when the prompt returns.
+
+- Folder: `Invoke-Starship-PreCommand`, a hook Starship calls before every prompt
+- Command: a custom PSReadLine `Enter` handler (`RiceAcceptLine`) that sets the title, then calls `AcceptLine`
+- This needs `suppressApplicationTitle` to be unset or `false` in Windows Terminal (it's unset). A fixed `tabTitle` in a WT profile also overrides it.
 
 ---
 
@@ -102,9 +111,10 @@ Each `$PROFILE` contains a single line:
 3. Apply the saved theme to this session only (PSReadLine colors, `FZF_DEFAULT_OPTS`, `BAT_THEME`)
 4. PSFzf with the `Ctrl+T` / `Ctrl+R` chords
 5. Terminal-Icons, and eza functions replacing the `ls` alias
-6. `starship init`
-7. `zoxide init` (must come **after** Starship, because zoxide wraps the prompt)
-8. fastfetch greeting, only in an interactive Windows Terminal tab
+6. Tab title: `Get-RiceTitle`, the `Invoke-Starship-PreCommand` hook, and the `Enter` handler
+7. `starship init`
+8. `zoxide init` (must come **after** Starship, because zoxide wraps the prompt)
+9. fastfetch greeting, only in an interactive Windows Terminal tab
 
 ---
 

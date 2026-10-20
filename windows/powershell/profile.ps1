@@ -123,6 +123,29 @@ function ll { eza -l --icons=auto --group-directories-first --git --time-style=r
 function la { eza -la --icons=auto --group-directories-first --git --time-style=relative @args }
 function lt { eza --tree --level=2 --icons=auto --group-directories-first @args }
 
+# ── Tab title ───────────────────────────────────────────────────────────────
+# Idle: current folder (~ for home).  While a command runs: the command itself.
+function Get-RiceTitle {
+    $path = $PWD.ProviderPath
+    if ($path -eq $HOME) { return '~' }
+    $leaf = Split-Path $path -Leaf
+    if ($leaf) { $leaf } else { $path }   # drive root, e.g. C:\
+}
+
+# Starship calls this before drawing each prompt
+function Invoke-Starship-PreCommand { $Host.UI.RawUI.WindowTitle = Get-RiceTitle }
+
+Set-PSReadLineKeyHandler -Key Enter -BriefDescription RiceAcceptLine -ScriptBlock {
+    $line = $null; $cursor = $null
+    [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+    $cmd = $line.Trim() -replace '\s+', ' '
+    if ($cmd) {
+        if ($cmd.Length -gt 30) { $cmd = $cmd.Substring(0, 29) + '…' }
+        $Host.UI.RawUI.WindowTitle = $cmd
+    }
+    [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+}
+
 # ── Prompt ──────────────────────────────────────────────────────────────────
 Invoke-Expression (&starship init powershell)
 
