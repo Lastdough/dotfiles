@@ -2,20 +2,21 @@
 
 add_newline = false
 command_timeout = 1000
-format = """$time$os $username$directory$python$git_branch$git_status"""
+# No `bold` in styles: Windows Terminal fakes bold for DepartureMono, which smears the icons
+format = """$time$os $username$hostname$directory$python$git_branch$git_status$line_break$character"""
 
 # Active palette; switched by `theme <name>` in PowerShell (keep this on one line)
 palette = 'catppuccin'
 
-# Drop ugly default prompt characters
+# Prompt arrow on its own line: green after success, red after an error
 [character]
-success_symbol = ''
-error_symbol = ''
+success_symbol = '[→](green)'
+error_symbol = '[→](red)'
 
 # ---
 
 [os]
-format = '[$symbol](bold fg) '
+format = '[$symbol](fg) '
 disabled = false
 
 [os.symbols]
@@ -23,24 +24,25 @@ Windows = ''
 Arch = '󰣇'
 Ubuntu = ''
 Macos = '󰀵'
-Debian = ' '
-# Debian = '⬢'
+# pve swaps this for '⬢' (linux/bash/pve/.bashrc)
+Debian = ''
+Fedora = ''
 Alpine = ""
 
 # ---
 
 # Shows the username
 [username]
-style_user = 'fg bold'
+style_user = 'fg'
 style_root = 'red bold'
 format = '[$user]($style) '
 disabled = false
 show_always = true
 
-# Shows the hostname
+# Shows the hostname, only over SSH (pve, LXCs); local Windows/Fedora prompts leave it out
 [hostname]
-ssh_only = false
-format = 'on [$hostname](bold yellow) '
+ssh_only = true
+format = 'in 🌐 [$hostname](yellow) '
 disabled = false
 
 # Shows current directory
@@ -48,7 +50,7 @@ disabled = false
 truncation_length = 1
 truncation_symbol = '…/'
 home_symbol = '󰋜 ~'
-style = 'bold cyan'
+style = 'cyan'
 read_only_style = 'red'
 read_only = '  '
 format = 'at [$path]($style)[$read_only]($read_only_style) '
@@ -59,12 +61,12 @@ symbol = ' '
 format = 'via [$symbol$branch]($style)'
 # truncation_length = 4
 truncation_symbol = '…/'
-style = 'bold green'
+style = 'green'
 
 # Shows current git status
 [git_status]
 format = '[$all_status$ahead_behind]($style) '
-style = 'bold green'
+style = 'green'
 conflicted = '🏳'
 up_to_date = ''
 untracked = ' '
@@ -79,7 +81,7 @@ deleted = ' '
 
 # Shows kubernetes context and namespace
 [kubernetes]
-format = 'via [󱃾 $context\($namespace\)](bold magenta) '
+format = 'via [󱃾 $context\($namespace\)](magenta) '
 disabled = false
 
 # ---
@@ -94,7 +96,7 @@ disabled = true
 disabled = true
 
 [python]
-format = 'via [🐍 $virtualenv](bold yellow) '
+format = 'via [🐍 $virtualenv](yellow) '
 disabled = false
 
 [nodejs]
@@ -109,7 +111,7 @@ disabled = true
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-format = '[ 󱑍 $time ](bold blue)'
+format = '[ 󱑍 $time ](blue)'
 
 # ---
 # Palettes: same keys in every theme, mirrored in ~/.config/powershell/profile.ps1

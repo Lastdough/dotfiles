@@ -137,7 +137,7 @@ Running `theme <name>`:
 - rewrites `colorScheme` in Windows Terminal's `settings.json` (WT hot-reloads it). **Only profiles already using one of the four rice schemes are changed**; WSL, cmd and other profiles keep their own schemes.
 - saves the name to `theme.txt` so new shells start with it
 
-Starship palettes override named colors, so the existing `bold blue` / `bold green` / `bold yellow` styles in `starship.toml` follow the theme automatically. Non-palette colors were remapped: `white` → `fg`, `purple` → `magenta`, `black` (root) → `red`, `197` (read-only) → `red`.
+Starship palettes override named colors, so the `blue` / `green` / `yellow` styles in `starship.toml` follow the theme automatically. The styles aren't `bold`: Departure Mono has no bold weight, so Windows Terminal fakes it for palette (hex) colors, which smears the icons. Non-palette colors were remapped: `white` → `fg`, `purple` → `magenta`, `black` (root) → `red`, `197` (read-only) → `red`.
 
 ### Palettes
 
@@ -170,14 +170,22 @@ Applied to both the **PowerShell** (7) and **Windows PowerShell** (5.1) profiles
 ```jsonc
 "colorScheme": "Catppuccin Mocha",   // managed by `theme`
 "cursorShape": "bar",
-"font": { "face": "DepartureMono Nerd Font Mono", "size": 12.375 },
+"font": { "face": "DepartureMono Nerd Font Mono", "size": 11 },
 "opacity": 92,
 "useAcrylic": true,
 "padding": "12"
 ```
 
 - `defaultProfile` → `{574e775e-4f2a-5b96-ac1e-a2962a402336}` (the PowerShell 7 dynamic profile, source `Windows.Terminal.PowershellCore`)
-- **Why 12.375pt:** Departure Mono is drawn on an 11px grid. At 192 DPI, 1pt = 192/72 ≈ 2.667px, so 12.375pt = 33px = 3× the grid, which keeps the pixels crisp. Other sharp sizes: 8.25pt (2×) and 16.5pt (4×). At 100% scaling (96 DPI) the equivalents are 8.25pt and 16.5pt.
+- **Font size:** Departure Mono is drawn on an 11px grid, so it's only crisp when the size in pixels is a multiple of 11. Windows Terminal sizes are in points, converted with the scaling of the monitor the window is on (px = pt × DPI / 72), and there's one size per profile, not per monitor:
+
+  | Scaling | Crisp sizes |
+  | --- | --- |
+  | 100% (96 DPI) | 8.25pt (11px), 16.5pt (22px) |
+  | 150% (144 DPI) | 11pt (22px), 16.5pt (33px) |
+  | 200% (192 DPI) | 8.25pt (22px), 12.375pt (33px), 16.5pt (44px) |
+
+  16.5pt is the only size crisp at all three. The profile uses 11pt because it looked best on a 1080p monitor at 100%, even though that's 14.7px, off the grid.
 
 ---
 
