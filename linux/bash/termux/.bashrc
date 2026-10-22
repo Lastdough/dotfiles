@@ -12,3 +12,9 @@
   fi
 
 eval "$(starship init bash)"
+
+# fastfetch greeting, only in an interactive terminal (RICE_GREETED stops nested shells repeating it)
+if [[ $- == *i* && -t 1 && -z $RICE_GREETED ]] && command -v fastfetch >/dev/null 2>&1; then
+    export RICE_GREETED=1
+    fastfetch
+fi

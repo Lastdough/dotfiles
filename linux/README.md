@@ -26,6 +26,12 @@ Edit the shared file, not the cached copy; changes apply on the next login.
 
 Install on Debian: `sudo apt install eza`. Use `command ls` (or `\ls`) to get GNU `ls`.
 
+## fastfetch
+
+`bash/204`, `bash/pve` and `bash/termux` end with the same fastfetch greeting as the Windows profile. It only runs when the shell is interactive, stdout is a terminal (`-t 1`), `fastfetch` is on `PATH`, and `RICE_GREETED` isn't set yet. The variable is exported, so nested shells (`bash`, `sudo -E`, tmux panes) don't repeat the banner.
+
+Install on Debian 13+/Ubuntu 25.04+ with `sudo apt install fastfetch` (older Debian: grab the `.deb` from the [releases page](https://github.com/fastfetch-cli/fastfetch/releases)), on Fedora with `sudo dnf install fastfetch`, and on Termux with `pkg install fastfetch`.
+
 ## Termux
 
 `bash/termux/.bashrc` is a trimmed-down `.bashrc` for Termux on Android. It defines the same eza aliases as above and loads fzf's key bindings and completion (`eval "$(fzf --bash)"`). It doesn't load Starship.
